@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws.accenture.it/" xmlns:tns="http://ws.accenture.it/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="recuperoAllAtleti" type="tns:recuperoAllAtleti"/>
+
+  <xs:element name="recuperoAllAtletiResponse" type="tns:recuperoAllAtletiResponse"/>
+
+  <xs:element name="recuperoAllGare" type="tns:recuperoAllGare"/>
+
+  <xs:element name="recuperoAllGareResponse" type="tns:recuperoAllGareResponse"/>
+
+  <xs:element name="recuperoAtleta" type="tns:recuperoAtleta"/>
+
+  <xs:element name="recuperoAtletaResponse" type="tns:recuperoAtletaResponse"/>
+
+  <xs:element name="recuperoGara" type="tns:recuperoGara"/>
+
+  <xs:element name="recuperoGaraResponse" type="tns:recuperoGaraResponse"/>
+
+  <xs:element name="saluti" type="tns:saluti"/>
+
+  <xs:element name="salutiResponse" type="tns:salutiResponse"/>
+
+  <xs:complexType name="recuperoAllGare">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="recuperoAllGareResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:gara" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="gara">
+    <xs:sequence>
+      <xs:element name="denominazione" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="luogo" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="recuperoAtleta">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="recuperoAtletaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:atleta" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="atleta">
+    <xs:sequence>
+      <xs:element name="categoria" type="xs:string" minOccurs="0"/>
+      <xs:element name="cognome" type="xs:string" minOccurs="0"/>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="saluti">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="salutiResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="recuperoAllAtleti">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="recuperoAllAtletiResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:atleta" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="recuperoGara">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="recuperoGaraResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:gara" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
